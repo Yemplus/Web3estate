@@ -1,24 +1,41 @@
-import React from 'react'
-import "../App.css"
+import React from "react";
+import "../App.css";
+import logo from "../images/logo.png";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
     <div>
-        <footer id="contact" className="footer">
+      <footer id="contact" className="footer">
         <div className="footer-grid container">
           <div className="footer-col">
-            <h4>Web3 RealEstate</h4>
-            <p className="small">
-              7, Babayemi Street, Orile-Agege, Tabon-Tabon, Agege, Lagos State
-            </p>
+            <div className="logo">
+              <img src={logo} alt="Web3Realestage Logo" id="logo" />
+            </div>
+            <p className="small">Realestate, Africa</p>
           </div>
 
           <div className="footer-col">
-            <h4>Navigate</h4>
-            <p><a href="#home">Home</a></p>
-            <p><a href="#about">About Us</a></p>
-            <p><a href="#properties">Properties</a></p>
-            <p><a href="#contact">Contact Us</a></p>
+
+            <p>
+              <Link to="/">Home</Link>
+            </p>
+
+            <p>
+              <Link to="/about">About Us</Link>
+            </p>
+
+            <p>
+              <Link to="/properties">Properties</Link>
+            </p>
+
+            <p>
+              <Link to="/contact">Contact Us</Link>
+            </p>
+
+            <p>
+              <Link to="/become-affiliate">Become an Affiliate</Link>
+            </p>
           </div>
 
           <div className="footer-col">
@@ -30,18 +47,19 @@ const Footer = () => {
                 alert("Message sent (demo)");
               }}
             >
-              <input type="email" placeholder="Email" required />
-              <textarea rows="4" placeholder="Message" required />
-              <button type="submit">Send mail</button>
+              <input type="email" placeholder="Email" required className="fill" />
+              <textarea rows="4" placeholder="Message" required className="fill" />
+              <button type="submit" className="fill">Send mail</button>
             </form>
           </div>
         </div>
+
         <div className="small center">
           © {new Date().getFullYear()} Web3 RealEstate. All rights reserved.
         </div>
       </footer>
     </div>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

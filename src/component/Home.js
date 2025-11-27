@@ -1,6 +1,16 @@
 import React from "react";
+import bitcoin from "../images/partners/bitcoin.png";
+import adron from "../images/partners/adron.png";
+import binance from "../images/partners/binance.png";
+import cac from "../images/partners/cac.png";
+import blockchain from "../images/partners/blockchain.png";
+import zylus from "../images/partners/zylus.png";
+import yemplus from "../images/partners/yemplus.png";
+import house1 from "../images/house1.jpg"
+import house2 from "../images/house2.jpg";
+import Adeyemi from "../images/founder.png";
 import "../App.css";
-import logo from "../images/logo.png";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -8,21 +18,6 @@ const Home = () => {
       {/* HERO */}
       <section id="home" className="hero">
         {/* NAVBAR */}
-
-        <header className="navbar">
-          <nav className="nav-links" aria-label="Main navigation">
-            <a href="#home">Home</a>
-            <a href="#about">About Us</a>
-            <a href="#properties">Properties</a>
-            <a href="#contact">Contact Us</a>
-          </nav>
-
-          <div className="nav-right">
-            <div className="logo">
-              <img src={logo} alt="Web3Realestage Logo" id="logo" />
-            </div>
-          </div>
-        </header>
 
         <div className="hero-inner container">
           <div className="hero-copy">
@@ -45,7 +40,7 @@ const Home = () => {
                     .scrollIntoView({ behavior: "smooth" })
                 }
               >
-                Explore Properties
+                <Link to="/properties" className="explore-text">Explore Properties</Link>
               </button>
             </div>
           </div>
@@ -57,17 +52,17 @@ const Home = () => {
         <div className="container">
           <div className="recent-row">
             <div className="recent-title">
-              <h3>
-                recently Added <span className="blue">properties</span>
+              <h3 className="rec-text">
+                recently Added <br/> <span className="blue">properties</span>
               </h3>
               <p className="muted">
-                Explore new listings and contact us for viewing appointments.
+                Explore new listings and contact us<br/> for viewing appointments.
               </p>
+
               <button
                 className="explore-btn"
-                onClick={() => alert("Explore clicked")}
               >
-                Explore
+                <Link to="/properties" className="explore-text">Explore</Link>
               </button>
             </div>
 
@@ -75,7 +70,7 @@ const Home = () => {
               <div className="prop-card">
                 <img
                   alt="Property 1"
-                  src="https://images.unsplash.com/photo-1560185127-6fe3a1a972b3?auto=format&fit=crop&w=800&q=60"
+                  src={house1}
                 />
               </div>
               <div className="prop-card">
@@ -87,7 +82,7 @@ const Home = () => {
               <div className="prop-card">
                 <img
                   alt="Property 3"
-                  src="https://images.unsplash.com/photo-1505691723518-36a8b3f0c5c8?auto=format&fit=crop&w=800&q=60"
+                  src={house2}
                 />
               </div>
             </div>
@@ -132,16 +127,16 @@ const Home = () => {
       {/* TEAM */}
       <section className="team">
         <div className="container">
-          <h3 className="title">Meet the Team</h3>
+          <h3 className="title" style={{textAlign:"center", fontSize:"20px"}}>Meet the Team </h3>
           <div className="team-grid">
             <div className="team-card">
               <div className="avatar">
                 <img
-                  alt="Bello Qaweeyah"
+                  alt="Stella Maguire"
                   src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=60"
                 />
               </div>
-              <h4>Bello Qaweeyah</h4>
+              <h4>Stella Maguire</h4>
               <p className="role">CoFounder</p>
               <p className="small">
                 Computer Scientist / Full-stack Developer / UI-UX Designer
@@ -151,11 +146,11 @@ const Home = () => {
             <div className="team-card">
               <div className="avatar">
                 <img
-                  alt="Adesiyan Adeyemi"
-                  src="https://images.unsplash.com/photo-1531123414780-fbd3a45d8362?auto=format&fit=crop&w=600&q=60"
+                  alt="Phem"
+                  src={Adeyemi}
                 />
               </div>
-              <h4>Adesiyan Adeyemi</h4>
+              <h4>Phem the founder</h4>
               <p className="role">Founder</p>
               <p className="small">
                 Geologist / React-native Developer / Realtor
@@ -194,14 +189,49 @@ const Home = () => {
       {/* PARTNERS */}
       <section className="partners">
         <div className="container">
-          <h4 className="title">Partners</h4>
+          <h4 className="title" style={{textAlign:"center", fontSize:"20px"}}>Partners</h4>
           <div className="partner-row">
-            <img alt="partner" src="()" />
-            <img alt="partner" src="" />
-
             <img
-              alt="partner"
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Adron_logo.png/800px-Adron_logo.png"
+              src={blockchain}
+              alt="blockchain"
+              id="blockchain"
+              className="partner-logo"
+            />
+            <img
+              src={bitcoin}
+              alt="bitcoin"
+              id="bitcoin"
+              className="partner-logo"
+            />
+            <img
+              src={binance}
+              alt="binance"
+              id="binance"
+              className="partner-logo"
+            />
+            <img
+              src={adron}
+              alt="adron"
+              id="adron"
+              className="partner-logo"
+            />
+            <img
+              src={yemplus}
+              alt="yemplus"
+              id="yemplus"
+              className="partner-logo-small"
+            />
+            <img
+              src={cac}
+              alt="cac"
+              id="cac"
+              className="partner-logo"
+            />
+            <img
+              src={zylus}
+              alt="zylus"
+              id="zylus"
+              className="partner-logo"
             />
           </div>
         </div>
